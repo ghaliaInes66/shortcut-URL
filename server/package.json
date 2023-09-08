@@ -1,0 +1,16 @@
+{
+  "name": "shortcut-url",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000s\u0000h\u0000o\u0000r\u0000t\u0000c\u0000u\u0000t\u0000-\u0000U\u0000R\u0000L\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
