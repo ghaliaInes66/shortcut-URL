@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const mongoose = require('mongoose');
 const userRoute = require('./routers/userRouter');
 const shortLinkRoute = require('./routers/ShortLinkRoute');
@@ -18,6 +19,7 @@ mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
     .catch(err => console.log(err));
 
 app.use(express.json());
+app.use(cors());
 
 app.use('/api/v1/users', userRoute, shortLinkRoute);
 
