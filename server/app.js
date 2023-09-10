@@ -4,10 +4,10 @@ const mongoose = require('mongoose');
 const userRoute = require('./routers/userRouter');
 const shortLinkRoute = require('./routers/ShortLinkRoute');
 const { redirctUrl } = require('./controllers/shortLink');
-
+const Cors = require('cors');
 
 // connect to mongodb
-const dbURI = "mongodb+srv://SidAhmed:213698@cluster0.claucrs.mongodb.net/Short_Link?retryWrites=true&w=majority"
+const dbURI = "mongodb+srv://SidAhmed:123@cluster0.claucrs.mongodb.net/Short_Link?retryWrites=true&w=majority"
 
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(res => {
@@ -15,10 +15,12 @@ mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
             console.log("server is Runnig in 2000");
         });
     })
-    .catch(err => console.log(err));
+    .catch(err => console.log(err.message));
+
+app.use(Cors());
 
 app.use(express.json());
 
 app.use('/api/v1/users', userRoute, shortLinkRoute);
 
-app.get('/:string', redirctUrl);
+app.get('/ch.bit/:string', redirctUrl);
