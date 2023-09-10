@@ -25,5 +25,5 @@ submitBtn.addEventListener('click',async ()=>{
         localStorage.setItem('userId', data._id);
         window.location.href = '../sid ahmed/index.html';
       })
-      .catch(err => console.log(err)); 
+      .catch(err => console.log(err));
 })

@@ -25,6 +25,11 @@ submitBtn.addEventListener('click',async ()=>{
         return;
     }else error3.textContent=''
     
+    if(password.value.length < 8){
+        error3.textContent='Your Password Is Less Than 8 Carchtere, Valid password required';
+        return;
+    }else error3.textContent=''
+
     if(password.value!='' && passwordConfi.value==''){
         error4.textContent='please confige your password';
         return;
