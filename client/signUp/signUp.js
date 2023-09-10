@@ -61,7 +61,7 @@ submitBtn.addEventListener('click',async ()=>{
       .then(res => res.json())
       .then(data => {
         localStorage.setItem('userId', data.user.id);
-        window.location.href = '../sid ahmed/index.html';
+        window.location.href = '../user page/index.html';
       })
       .catch(err => console.error(err));
 
