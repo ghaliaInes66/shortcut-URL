@@ -3,11 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="center">
+    <header>
+        <nav>
+            <a href="#" class="link">Home</a>
+            <div class="profile">
+                <div class="username">
+                    <i class="uil uil-user-circle"></i>
+                    <p id="user-name"></p>
+                </div>
+                <div class="more">
+                    <p id="email"></p>
+                    <div class="btns">
+                        <a href="../index.html">Log Out</a>
+                        <a href="#"><i class="uil uil-pen"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
         <div class="form">
             <input type="text" id="linkInp">
             <input type="submit" value="Convert" class="btn">
@@ -15,7 +35,7 @@
         <div class="content">
             
         </div>
-    </div>
+    </main>
     <script src="./script.js"></script>
 </body>
 </html>

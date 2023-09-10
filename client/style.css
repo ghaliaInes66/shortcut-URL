@@ -1,41 +1,63 @@
 *{
-    padding: 0px 0px;
-    margin: 0px 0px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body{
     background-color: rgb(42, 44, 72);
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: grid;
+    place-items: center;
 }
 
-.nav{
+header{
     position: fixed;
     top: 0;
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    height: 100px;
-    line-height: 100px;
-    background: linear-gradient(rgba(39,39,39, 0.6), transparent);
     z-index: 100;
+    background: linear-gradient(rgba(39,39,39, 0.6), transparent);
+    width: 100vw;
+    height: 100px;
 }
 
-.nav-menu ul li .link{
+nav{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    padding: 20px;
+}
+
+.login-signUp{
+    grid-column: 3/4;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    padding-right: 20px;
+}
+
+.link{
     text-decoration: none;
     font-weight: 500;
     color: #fff;
     padding-bottom: 15px;
     margin: 0 25px;
+    text-align: center;
+    transition: all 0.15s;
 }
-.link:hover, .active{
+.link:hover{
     border-bottom: 2px solid #fff;
 }
 
-.nav-button .btn{
+.btn{
+    text-decoration: none;
+    display: grid;
+    place-items: center;
     width: 130px;
     height: 40px;
     font-weight: 500;
     background: rgba(255, 255, 255, 0.4);
-    border: none;
     border-radius: 30px;
     cursor: pointer;
     transition: .3s ease;
@@ -46,22 +68,13 @@ body{
     background: rgba(255, 255, 255, 0.3);
 }
 
-.main{
-    position: relative;
+main{
     background-color: rgb(42, 44, 72);
-    height: 200px;
-    width: 500px;
-    top: 80%;
-    left: -10%;
-    transform: translate(-50%,50%);
-    border: 5px solid rgb(42, 44, 72);
-    border-radius: 20px;
+    width: auto;
+    margin-top:50px;
 }
 
 #longurl{
-    position: relative;
-    top: 40%;
-    left: 10%;
     height: 40px;
     width: 296px;
     border: 2px solid black;
@@ -74,9 +87,6 @@ body{
 }
 
 #shorten{
-    position: relative;
-    top: 40%;
-    left: 12%;
     height: 40px;
     width: 80px;
     border: 2px solid black;
@@ -86,6 +96,7 @@ body{
     font-family: monospace;
     color: white;
     background-color: rgb(19, 0, 128);
+    cursor: pointer;
 }
 
 #shorten:hover{
@@ -93,9 +104,6 @@ body{
 }
 
 #shorturl{
-    position: relative;
-    top: 20%;
-    left: 10%;
     height: 40px;
     width: 270px;
     border: 2px solid black;
@@ -123,31 +131,31 @@ body{
     background-color: skyblue;
 }
 
-#sing{
-    position: relative;
-    top: 5%;
-    left: 12%;
+#sign{
     height: 50px;
     width: 200px;
+    margin: 30px 0;
     border: 2px solid black;
     border-radius: 10px;
     font-size: large;
     font-weight: bold;
     font-family: monospace;
-    color: white;
     background-color: rgb(19, 0, 128);
 }
 
-#sing:hover{
+#sign a{
+    color: white;
+    text-decoration: none;
+}
+
+#sign:hover{
     background-color: skyblue;
 }
-.main p{
-    /* background-color: white; */
-    position: relative;
-    top: 30%;
-    left: 13%;
+
+h2{
     height: 60px;
     width: 400px;
+    margin: 30px 0;
     font-size: 50px;
     font-family: monospace;
     font-weight: bold;

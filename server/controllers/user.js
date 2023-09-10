@@ -49,6 +49,14 @@ const logInUser = (req, res) => {
         .catch(err => console.log(err));
 }
 
+const findUserInfo = (req, res) => {
+    const id= req.params.id;
+
+    const userInfo= User.findById(id);
+    res.send(userInfo);
+}
+
+
 const updateUser = (req, res) => {
     const id = req.params.id;
     const body = req.body;
@@ -95,6 +103,7 @@ const deleteUser = (req, res) => {
 module.exports = {
     SignUpUSer,
     logInUser,
+    findUserInfo,
     updateUser,
     deleteUser
 }

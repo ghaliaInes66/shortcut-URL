@@ -63,3 +63,17 @@ setTimeout(() => {
         });
     });
 }, 500);
+
+
+//get user info
+const username=document.getElementById('user-name');
+const email=document.getElementById('email');
+
+fetch(`http://localhost:2000/api/v1/users/${id}`)
+.then(res => res.json())
+.then(result => {
+    console.log(result);
+    userName.textContent=result.userName;
+    email.textContent=result.email;
+})
+.catch(err => console.log(err.message));

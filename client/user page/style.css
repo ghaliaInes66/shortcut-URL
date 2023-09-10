@@ -10,10 +10,31 @@ body {
     display: flex;
     justify-content: center;
     background-color: rgb(42, 44, 72);
-}   
+} 
 
-.center {
-    margin-top: 90px;
+header{
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(rgba(39,39,39, 0.6), transparent);
+    width: 100vw;
+    height: 100px;
+}
+
+nav{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    padding: 20px;
+}
+
+.profile{
+    grid-column: 3/4;
+    background-color: white;
+}
+
+main {
+    margin-top: 150px;
     width: 56%;
     height: fit-content;
 }
