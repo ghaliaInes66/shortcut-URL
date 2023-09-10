@@ -16,7 +16,7 @@ body {
 .center {
     border-radius: 20px;
     margin-top: 25px;
-    height: 60%;
+    height: auto;
     width: 30%;
     padding: 25px;
     background-color: rgb(42, 44, 72);
