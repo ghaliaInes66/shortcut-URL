@@ -49,10 +49,11 @@ const logInUser = (req, res) => {
         .catch(err => console.log(err));
 }
 
-const findUserInfo = (req, res) => {
+const findUserInfo = async (req, res) => {
     const id= req.params.id;
 
-    const userInfo= User.findById(id);
+    const userInfo = await User.findById(id);
+    console.log(userInfo);
     res.send(userInfo);
 }
 
