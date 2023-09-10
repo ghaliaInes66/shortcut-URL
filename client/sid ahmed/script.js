@@ -1,21 +1,22 @@
 const content = document.querySelector(".content");
 const myInp = document.getElementById("linkInp");
 const btn = document.querySelector('.btn');
+const id = localStorage.getItem('userId');  
 
 const CardShortLink = (shortURL, Url) => {
     return `
     <div class="shortLink">
-        <p>=> ${Url}</p>
+    <p>=> ${Url}</p>
         <a href=${Url} id="link" >ch.bit/${shortURL}</a>
         <div class="delete-icons">delete</div>
     </div>
    `
 }
-
 // get all short_Links
-fetch('http://localhost:2000/api/v1/users/64fbc453845524d6ebf08723/shortLink')
+fetch(`http://localhost:2000/api/v1/users/${id}/shortLink`)
 .then(res => res.json())
 .then(result => {
+    console.log(result);
     content.classList.add("active");
     result.forEach(element => {
         content.innerHTML += CardShortLink(element.ShortURL, element.url); 
@@ -27,7 +28,7 @@ fetch('http://localhost:2000/api/v1/users/64fbc453845524d6ebf08723/shortLink')
 btn.addEventListener('click', () => {
     const val = myInp.value;
     console.log(val);
-    fetch('http://localhost:2000/api/v1/users/64fbc453845524d6ebf08723/shortLink', {
+    fetch(`http://localhost:2000/api/v1/users/${id}/shortLink`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -38,8 +39,6 @@ btn.addEventListener('click', () => {
     .then(data => {
         console.log(data.result);
         location.reload();
-        // const result = data.result;
-        // content.innerHTML += CardShortLink(result.ShortURL, result.url);
     })
     .catch(err => console.log(err.message));
     
@@ -51,7 +50,7 @@ setTimeout(() => {
         element.addEventListener("click", () => {
             const shortUrl = document.getElementById('link').innerHTML.slice(7,);
             console.log(shortUrl);
-            fetch(`http://localhost:2000/api/v1/users/64fbc453845524d6ebf08723/shortLink/${shortUrl}`, {
+            fetch(`http://localhost:2000/api/v1/users/${id}/shortLink/${shortUrl}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())

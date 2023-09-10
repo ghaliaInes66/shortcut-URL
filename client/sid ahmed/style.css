@@ -9,16 +9,18 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
+    background-color: rgb(42, 44, 72);
 }   
 
 .center {
-    width: 80%;
+    margin-top: 90px;
+    width: 56%;
     height: fit-content;
 }
 
 .form {
     padding: 50px;
-    background-color: burlywood;
+    background-color: white;
     gap: 25px;
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -31,11 +33,11 @@ body {
 }
 
 .btn:hover {
-    background-color: cadetblue;
+    background-color: rgb(42, 44, 72);
 }
 
 .form input {
-    border: none;
+    /* border: none; */
     border-radius: 5px;
 }
 
@@ -44,7 +46,7 @@ body {
     display: none;
     margin-top: 25px;
     height: fit-content;
-    background-color: cadetblue;
+    background-color: white;
 }
 
 .active {

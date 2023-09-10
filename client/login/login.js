@@ -18,11 +18,12 @@ submitBtn.addEventListener('click',async ()=>{
     const userN = userName.value;
     const pass = password.value;
 
-    await fetch(`http://localhost:2000/api/v1/users/${userN}/${pass}`)
+    await fetch(`http://localhost:2000/api/v1/users/userName=${userN}&&pass=${pass}`)
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        window.location.href = '../index.html';
+        localStorage.setItem('userId', data._id);
+        window.location.href = '../sid ahmed/index.html';
       })
-      .catch(err => console.error(err)); 
+      .catch(err => console.log(err)); 
 })

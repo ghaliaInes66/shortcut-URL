@@ -46,15 +46,17 @@ submitBtn.addEventListener('click',async ()=>{
      console.log(newUser.email);
      console.log(newUser.password);
 
-     await fetch(' http://localhost:2000/api/v1/users', {
+     await fetch('http://localhost:2000/api/v1/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(newUser)
       })
+      .then(res => res.json())
       .then(data => {
-        window.location.href = '../index.html';
+        localStorage.setItem('userId', data.user.id);
+        window.location.href = '../sid ahmed/index.html';
       })
       .catch(err => console.error(err));
 

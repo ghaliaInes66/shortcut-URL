@@ -34,6 +34,7 @@ const getAllLinks = async (req, res) => {
         let arr = [];
         const userId = req.params.userId;
         const result = await ShortLink.find();
+        console.log(result);
         result.forEach(element => {
             if (element.userID === userId) {
                 arr.push(element);
