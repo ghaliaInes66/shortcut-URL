@@ -2,7 +2,7 @@
   <html lang="en">
     <head>
       <title>Login </title>
-      <link rel="stylesheet" href="../sing.css" />
+      <link rel="stylesheet" href="./login.css" />
       <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
         rel="stylesheet"
@@ -12,15 +12,19 @@
       <div class="login-box">
         <h1>Login</h1>
         <form>
-          <label>Email</label>
-          <input type="email" placeholder="" />
-          <label>Password</label>
-          <input type="password" placeholder="" />
-          <input type="button" value="Submit" />
+          <label for="username">Username</label>
+          <input id="username" type="text" placeholder="username" />
+          <span class="error error1"></span>
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="password" />
+          <span class="error error2"></span>
+          <input id="submit" type="button" value="Submit" />
         <closeform></closeform></form>
       </div>
       <p class="para-2">
-        Not have an account? <a href="signup.html">Sign Up Here</a>
+        Not have an account? <a href="../signup/signUp.html">Sign Up Here</a>
       </p>
-    </body>
+
+      <script src="./login.js"></script>
+</body>
 </html>

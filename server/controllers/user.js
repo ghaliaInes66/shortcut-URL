@@ -24,13 +24,14 @@ const SignUpUSer = (req, res) => {
 }
 
 const logInUser = (req, res) => {
-    const body = req.body;
+    const userName = req.params.userName;
+    const pass = req.params.pass;
 
     User.find()
         .then(users => {
             users.forEach(element => {
-                if (element.userName === body.userName) {
-                    compare(body.password, element.password, (err, result) => {
+                if (element.userName === userName) {
+                    compare(pass, element.password, (err, result) => {
                         if (err) {
                           console.error('Error comparing passwords:', err);
                         } else if (result) {
