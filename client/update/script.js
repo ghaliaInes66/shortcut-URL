@@ -22,7 +22,7 @@ saveBtn.onclick = () => {
     let new_email = email.value;
     let new_password;
     
-    if (new_password === "") {
+    if (password.value === "") {
         new_password = sessionStorage.getItem('pass');
     } else {
         new_password = password.value; 
