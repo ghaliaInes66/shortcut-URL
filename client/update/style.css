@@ -11,12 +11,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: monospace;
 }
 
 .center {
     border-radius: 20px;
     margin-top: 25px;
-    height: 60%;
+    height: auto;
     width: 30%;
     padding: 25px;
     background-color: rgb(42, 44, 72);
@@ -69,4 +70,16 @@ body {
 
 #save:hover {
     background-color: #2196F3;
+}
+
+@media (max-width:1200px) {
+    .center{
+        width: 50%;
+    }
+}
+
+@media (max-width:700px) {
+    .center{
+        width: 90%;
+    }
 }
