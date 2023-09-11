@@ -16,11 +16,9 @@ const CardShortLink = (shortURL, Url) => {
 fetch(`https://url-shortener-mugw.onrender.com/api/v1/users/${id}/shortLink`)
 .then(res => res.json())
 .then(result => {
-    console.log(result);
     content.classList.add("active");
     result.forEach(element => {
         content.innerHTML += CardShortLink(element.ShortURL, element.url); 
-        console.log(element);
     });
 })
 .catch(err => console.log(err.message));
@@ -37,7 +35,6 @@ btn.addEventListener('click', () => {
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data.result);
         location.reload();
     })
     .catch(err => console.log(err.message));
@@ -49,13 +46,11 @@ setTimeout(() => {
     deleteIcons.forEach(element => {
         element.addEventListener("click", () => {
             const shortUrl = document.getElementById('link').innerHTML.slice(7,);
-            console.log(shortUrl);
             fetch(`https://url-shortener-mugw.onrender.com/api/v1/users/${id}/shortLink/${shortUrl}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 element.parentElement.remove();
                 location.reload();
             })
@@ -72,7 +67,6 @@ const email=document.getElementById('email');
 fetch(`https://url-shortener-mugw.onrender.com/api/v1/users/${id}`)
 .then(res => res.json())
 .then(result => {
-    console.log(result);
     username.textContent=result.userName;
     email.textContent=result.email;
 })
