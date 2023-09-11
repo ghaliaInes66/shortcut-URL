@@ -5,7 +5,7 @@ const id = localStorage.getItem('userId');
 let pass;
 
 
-fetch(`http://localhost:2000/api/v1/users/${id}`)
+fetch(`https://url-shortener-mugw.onrender.com/api/v1/users/${id}`)
 .then(res => res.json())
 .then(data => {
     user_name.innerHTML = data.userName;
@@ -13,10 +13,10 @@ fetch(`http://localhost:2000/api/v1/users/${id}`)
 .catch(err => console.log(err.message))
 
 
-loginBtn.onclick = () => {
+loginBtn.onclick = async() => {
     pass = passwordInput.value;
     sessionStorage.setItem('pass', pass);
-    fetch(`http://localhost:2000/api/v1/users/${id}/pass=${pass}`)
+    await fetch(`https://url-shortener-mugw.onrender.com/api/v1/users/${id}/pass=${pass}`)
         .then(res => res.json())
         .then(data => {
             location.href = '../index.html';

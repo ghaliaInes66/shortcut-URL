@@ -51,7 +51,7 @@ submitBtn.addEventListener('click',async ()=>{
      console.log(newUser.email);
      console.log(newUser.password);
 
-     await fetch('http://localhost:2000/api/v1/users', {
+     await fetch('https://url-shortener-mugw.onrender.com/api/v1/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
