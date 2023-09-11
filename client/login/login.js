@@ -18,7 +18,7 @@ submitBtn.addEventListener('click',async ()=>{
     const userN = userName.value;
     const pass = password.value;
 
-    await fetch(`http://localhost:2000/api/v1/users/userName=${userN}&&pass=${pass}`)
+    await fetch(`https://url-shortener-mugw.onrender.com/api/v1/users/userName=${userN}&&pass=${pass}`)
       .then(res => res.json())
       .then(data => {
         console.log(data);

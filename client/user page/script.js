@@ -13,7 +13,7 @@ const CardShortLink = (shortURL, Url) => {
    `
 }
 // get all short_Links
-fetch(`http://localhost:2000/api/v1/users/${id}/shortLink`)
+fetch(`https://url-shortener-mugw.onrender.com/api/v1/users/${id}/shortLink`)
 .then(res => res.json())
 .then(result => {
     console.log(result);
@@ -28,7 +28,7 @@ fetch(`http://localhost:2000/api/v1/users/${id}/shortLink`)
 btn.addEventListener('click', () => {
     const val = myInp.value;
     console.log(val);
-    fetch(`http://localhost:2000/api/v1/users/${id}/shortLink`, {
+    fetch(`https://url-shortener-mugw.onrender.com/api/v1/users/${id}/shortLink`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -50,7 +50,7 @@ setTimeout(() => {
         element.addEventListener("click", () => {
             const shortUrl = document.getElementById('link').innerHTML.slice(7,);
             console.log(shortUrl);
-            fetch(`http://localhost:2000/api/v1/users/${id}/shortLink/${shortUrl}`, {
+            fetch(`https://url-shortener-mugw.onrender.com/api/v1/users/${id}/shortLink/${shortUrl}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())
@@ -69,7 +69,7 @@ setTimeout(() => {
 const username=document.getElementById('user-name');
 const email=document.getElementById('email');
 
-fetch(`http://localhost:2000/api/v1/users/${id}`)
+fetch(`https://url-shortener-mugw.onrender.com/api/v1/users/${id}`)
 .then(res => res.json())
 .then(result => {
     console.log(result);

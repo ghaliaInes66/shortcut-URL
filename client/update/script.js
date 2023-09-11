@@ -8,7 +8,7 @@ let new_userName;
 let new_email;
 let new_password;
 
-fetch(`http://localhost:2000/api/v1/users/${id}`)
+fetch(`https://url-shortener-mugw.onrender.com/api/v1/users/${id}`)
 .then(res => res.json())
 .then(data => {
     console.log(data);
@@ -34,7 +34,7 @@ saveBtn.onclick = () => {
         "password": new_password
     }
     
-    fetch(`http://localhost:2000/api/v1/users/${id}`, {
+    fetch(`https://url-shortener-mugw.onrender.com/api/v1/users/${id}`, {
         method: 'PUT',
         headers:{
             'Content-Type': 'application/json'
