@@ -1,4 +1,4 @@
-const { hashSync, compare } = require('bcrypt');
+const { hashSync, compare, compareSync } = require('bcrypt');
 const User = require('../models/user');
 const saltRounds = 2;
 
@@ -101,10 +101,21 @@ const deleteUser = (req, res) => {
         .catch(err => console.log(err));
 }
 
+const checkPassword = async (req, res) => {
+    const id = req.params.id;
+    const pass = req.params.password;
+    const user = await User.findById(id);
+    const result = compareSync(pass, user.password);
+    if (result) {
+        res.send(user);
+    }
+}
+
 module.exports = {
     SignUpUSer,
     logInUser,
     findUserInfo,
     updateUser,
-    deleteUser
+    deleteUser,
+    checkPassword
 }
