@@ -74,7 +74,7 @@ img{
     border-radius: 50%;
 }
 
-a{
+.profile a{
     color: white;
     text-decoration: none;
 }
@@ -144,4 +144,43 @@ main {
 
 .delete-icons{
     cursor: pointer;
+}
+
+@media (max-width:1330px) {
+    main{
+        width: 70%;
+    }
+}
+
+@media (max-width:850px) {
+    main{
+        width: 90%;
+    }
+
+    .form{
+        padding: 20px;
+        gap: 10px;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .shortLink {
+        font-size: 23px;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    p{
+        font-size: 1.2rem
+    }
+}
+
+@media (max-width:380px) {
+    .form{
+        padding: 10px;
+        gap: 10px;
+        grid-template-columns: 210px 70px;
+    }
+    p{
+        font-size: 1rem
+    }
 }

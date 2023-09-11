@@ -11,6 +11,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: monospace;
 }
 
 .center {
@@ -69,4 +70,16 @@ body {
 
 #save:hover {
     background-color: #2196F3;
+}
+
+@media (max-width:1200px) {
+    .center{
+        width: 50%;
+    }
+}
+
+@media (max-width:700px) {
+    .center{
+        width: 90%;
+    }
 }
