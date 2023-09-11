@@ -48,3 +48,7 @@ saveBtn.onclick = () => {
     })
     .catch(err => console.log(err.message));
 }
+
+cancelBtn.onclick= () => {
+    location.href = '../user page/index.html'
+}

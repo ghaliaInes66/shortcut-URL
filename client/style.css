@@ -103,34 +103,6 @@ main{
     background-color: skyblue;
 }
 
-#shorturl{
-    height: 40px;
-    width: 270px;
-    border: 2px solid black;
-    border-radius: 20px;
-    padding-left: 10px;
-    padding-right: 47px;
-    font-size: large;
-    font-family: monospace;
-    font-weight: bold;
-}
-
-#copy{
-    position: relative;
-    top: 22%;
-    left: 0%;
-    height: 35px;
-    width: 35px;
-    border: 2px solid black;
-    border-radius: 10px;
-    color: white;
-    background-color: rgb(19, 2, 169);
-}
-
-#copy:hover{
-    background-color: skyblue;
-}
-
 #sign{
     height: 50px;
     width: 200px;
@@ -160,4 +132,27 @@ h2{
     font-family: monospace;
     font-weight: bold;
     color: rgb(252, 246, 246);
+}
+
+@media (max-width:400px) {
+    .login-signUp{
+        padding-right: 10px;
+    }
+
+    .btn{
+        width: 90px;
+    }
+
+    #longurl{  
+        width: 250px;
+    }
+    
+    #shorten{
+        width: 70px;
+    }
+    
+    h2{
+        width: auto;
+        font-size: 2.5rem;
+    }
 }

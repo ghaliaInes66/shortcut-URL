@@ -7,13 +7,17 @@ body {
     display: grid;
     place-items: center;
   }
+
+  main{
+    width: 360px;
+  }
   
   .login-box {
-    width: 360px;
-    margin: auto;
+    width: auto;
     border-radius: 3px;
     background-color: white;
-    padding: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
   }
   
   h1 {
@@ -27,7 +31,6 @@ body {
   
   form {
     width: 300px;
-    margin-left: 20px;
   }
   
   form label {
@@ -54,25 +57,39 @@ body {
     font-size: 18px;
   }
 
-  input[type="button"]:hover {
-    background-color: skyblue;
+input[type="button"]:hover {
+  background-color: skyblue;
 }
-  p {
-    text-align: center;
-    padding-top: 20px;
-    font-size: 15px;
-  }
-  .para-2 {
-    text-align: center;
-    color: white;
-    font-size: 15px;
-    margin-top: -10px;
-  }
-  .para-2 a {
-    color: skyblue;
-  }
-  
-  .error{
-    color: red;
-  }
-    
+p {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 15px;
+}
+.para-2 {
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  margin-top: -10px;
+}
+.para-2 a {
+  color: skyblue;
+}
+
+.error{
+  color: red;
+}
+
+@media (max-width:1000px) {
+    main{
+      width: 700px;
+    }
+
+    form {
+      width: 90%;
+    }
+
+    input[type="button"] {
+      width: 70%;
+      margin-left: 15%;
+    }
+}

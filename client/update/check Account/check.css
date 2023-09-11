@@ -10,6 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: monospace;
 }
 
 .center {
@@ -64,4 +65,22 @@ body {
     border: none;
     background-color: #29B6F6;
     font-size: 18px;
+}
+
+@media (max-width:1500px) {
+    .center{
+        width: 30%;
+    }
+}
+
+@media (max-width:850px) {
+    .center{
+        width: 60%;
+    }
+}
+
+@media (max-width:500px) {
+    .center{
+        width: 80%;
+    }
 }
