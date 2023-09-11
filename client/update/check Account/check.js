@@ -14,10 +14,10 @@ fetch(`http://localhost:2000/api/v1/users/${id}`)
 .catch(err => console.log(err.message))
 
 
-loginBtn.onclick = () => {
+loginBtn.onclick = async() => {
     pass = passwordInput.value;
     sessionStorage.setItem('pass', pass);
-    fetch(`http://localhost:2000/api/v1/users/${id}/pass=${pass}`)
+    await fetch(`http://localhost:2000/api/v1/users/${id}/pass=${pass}`)
         .then(res => res.json())
         .then(data => {
             console.log(data);
